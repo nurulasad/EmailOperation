@@ -1,16 +1,51 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<script src="~/bower_components/angular/angular.min.js"></script>
+<script src="~/angular/app.js"></script>
+<script src="~/angular/mailController.js"></script>
 
 <div ng-app="mailApp">
-    <form>
-        From <input type="text" id="sendFrom" value="nurulasad@gratex.com.au" />
-        To <input type="text" id="sendTo" value="nurulasad@gratex.com.au" />
+    <div ng-controller="mailController">
+        <form>
 
-        Subject <input type="text" id="mailSubject" value="Test" />
+            Use WebConfig MailServer <input type="checkbox" id="useWebConfigMailServer" ng-model="useWebConfigMailServer" value="{{useWebConfigMailServer}}" /> {{useWebConfigMailServer}}
+            <br />
+            Use SSL <input type="checkbox" id="useSSL" ng-model="useSSL" value="{{useSSL}}" /> {{useSSL}}
+            <br />
+            Use Credential Provided <input type="checkbox" id="useCredential" ng-model="useCredential" value="{{useCredential}}" /> {{useCredential}}
+            <br />
+            <hr />
 
-        Body <input multiple type="text" id="mailBody" value="Mail body content" />
+            Username <input type="text" id="username" ng-model="username" value="{{username}}" />
+            <br />
+            Password <input type="password" id="password" ng-model="password" value="{{password}}" />
+            <br />
 
-        <input type="submit" id="mailSubmit" value="Send" onclick="Sendmail()"/>
-    </form>
+            <hr />
+
+            Host <input type="text" id="sendFrom" ng-model="host" value="{{host}}" />
+            <br />
+            Port <input type="text" id="sendFrom" ng-model="port" value="{{port}}" />
+            <br />
+
+            From <input type="text" id="sendFrom" ng-model="fromAddress" value="{{fromAddress}}" />
+            <br />
+            To <input type="text" id="sendTo" ng-model="toAddress" value="{{toAddress}}" />
+            <br />
+
+            Subject <input type="text" id="mailSubject" ng-model="mailSubject" value="{{mailSubject}}" />
+            <br />
+
+            Body <input multiple type="text" id="mailBody" ng-model="mailBody" value="{{mailBody}}" />
+            <br />
+
+            <input type="button" id="mailSubmit" value="Send" ng-click="sendMail()" />
+        </form>
+
+        <hr />
+        Result = {{result}}
+    </div>
+
+    
 </div>
