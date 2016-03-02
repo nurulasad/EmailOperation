@@ -10,7 +10,7 @@
         vm.useCredential = true;
 
         vm.username = "Gratex\\svc.orq2email";
-        vm.password = "yUggQY1LbRA9PQJDFcOQ";
+        vm.password = "";
 
 
         vm.host = "smtp.gratex.com.au";
