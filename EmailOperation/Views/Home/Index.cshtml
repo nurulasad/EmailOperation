@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div ng-app="mailApp">
+    <form>
+        From <input type="text" id="sendFrom" value="nurulasad@gratex.com.au" />
+        To <input type="text" id="sendTo" value="nurulasad@gratex.com.au" />
+
+        Subject <input type="text" id="mailSubject" value="Test" />
+
+        Body <input multiple type="text" id="mailBody" value="Mail body content" />
+
+        <input type="submit" id="mailSubmit" value="Send" onclick="Sendmail()"/>
+    </form>
+</div>
